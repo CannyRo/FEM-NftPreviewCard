@@ -1,0 +1,199 @@
+// Imports, Use, Forward, ...
+@use './util/minreset.scss';
+@use './util' as *;
+
+// Règle d'écriture d'une classe :
+// 1) Box
+// 2) Border
+// 3) Background
+// 4) Text
+// 5) Other
+
+// Règle BEM
+// Block = card
+// Element = image, title, describe, devise, value, date, avatar, autor
+// Modifier = here isn't modifier
+
+// ___Base___
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $main-bg;
+    font-family: $font-outfit;
+    font-size: rem(18);
+}
+footer{
+    //margin-top: auto;
+    text-align: center;
+    font-size: rem(11);
+    color: $white;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+
+// ___Layout___
+.card{
+    width: rem(327);
+    height: rem(543);
+    justify-self: center;
+    align-self: center;
+
+    border-radius: rem(15);
+
+    background-color: $card-bg;
+
+    overflow: hidden;
+
+    @include breakpoint(small){
+        width: rem(350);
+        height: rem(596);
+    }
+    &__header {
+        width: rem(278);
+        height: rem(278);
+        margin: rem(24);
+
+        border-radius: rem(15);
+
+        overflow: hidden;
+        @include breakpoint(small){
+            width: rem(302);
+            height: rem(302);
+        }
+    }
+    &__content {
+        width: rem(278);
+        height: auto;
+        margin-left: rem(24);
+        margin-top: rem(24);
+        margin-right: rem(24);
+        margin-bottom: rem(16);
+        @include breakpoint(small){
+            width: rem(302);
+        }
+    }
+    &__title {
+        margin-bottom: rem(12);
+        color: $white;
+        font-weight: 600;
+        font-style: normal;
+        font-size: rem(22);
+        line-height: rem(28);
+        @include breakpoint(small){
+            margin-bottom: rem(16);
+        }
+    }
+    &__describe {
+        margin-bottom: rem(16);
+        color: $softblue;
+        font-weight: 300;
+        font-style: normal;
+        font-size: rem(18);
+        line-height: rem(26);
+        @include breakpoint(small){
+            margin-bottom: rem(24);
+        }
+    }
+    &__value {
+        box-sizing: content-box;
+        display: flex;
+        justify-content: space-between;
+        height: rem(19);
+        padding-bottom: rem(16);
+        border-bottom: rem(2) solid $line-bg;
+        @include breakpoint(small){
+            height: rem(20);
+            padding-bottom: rem(24);
+        }
+    }
+    &__footer {
+        width: rem(278);
+        height: auto;
+    }
+    &__autor {
+        display: flex;
+        align-items: center;
+        width: rem(278);
+        height: rem(33);
+        margin-left: rem(24);
+        margin-right: rem(24);
+        margin-bottom: rem(24);
+        @include breakpoint(small){
+            width: rem(302);
+            margin-bottom: rem(32);
+        }
+    }
+}
+// ___Module___
+.value{
+display: flex;
+color: $cyan;
+font-weight: 600;
+font-style: normal;
+font-size: rem(15);
+line-height: rem(19);
+@include breakpoint(small){
+    font-size: rem(16);
+    line-height: rem(20.16);
+}
+}
+.value img{
+    width: auto;
+    height: 100%;
+    margin-right: rem(6.48);
+}
+.date{
+    display: flex;
+    color: $softblue;
+    font-weight: 400;
+    font-style: normal;
+    font-size: rem(15);
+    line-height: rem(19);
+    @include breakpoint(small){
+        font-size: rem(16);
+        line-height: rem(20.16);
+    }
+}
+.date img{
+    width: auto;
+    height: 100%;
+    margin-right: rem(7.7);
+}
+.card__autor img{
+    width: auto;
+    height: 100%;
+    margin-right: rem(16);
+    border: rem(1) solid $white;
+    border-radius: 100%;
+}
+.card__autor p{
+    color: $softblue;
+    font-weight: 400;
+    font-style: normal;
+    font-size: rem(15);
+    line-height: rem(19);
+    @include breakpoint(small){
+        font-size: rem(16);
+        line-height: rem(20.16);
+    }
+}
+.card__autor a{
+    color: $white;
+    margin-left: rem(5);
+}
+// ___State___
+
+// ___Theme___
+.attribution{
+    color: hsl(228, 45%, 44%);
+}
+.attribution:visited{
+    color: hsl(228, 45%, 44%);
+}
