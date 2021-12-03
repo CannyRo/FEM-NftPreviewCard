@@ -64,10 +64,15 @@ footer {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
-  color: inherit;
+  color: white;
+}
+
+a:focus, a:hover, a:target {
+  color: #00fff7;
 }
 
 .card {
@@ -90,6 +95,10 @@ a:visited {
   height: 17.375rem;
   margin: 1.5rem;
   border-radius: 0.9375rem;
+  background-position: center;
+  background-image: url("../images/image-equilibrium.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 @media (min-width: 40em) {
@@ -97,6 +106,18 @@ a:visited {
     width: 18.875rem;
     height: 18.875rem;
   }
+}
+.card__header .bg-cyan {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 246, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.card__header:focus .bg-cyan, .card__header:hover .bg-cyan, .card__header:target .bg-cyan {
+  opacity: 1;
 }
 .card__content {
   width: 17.375rem;
@@ -113,7 +134,6 @@ a:visited {
 }
 .card__title {
   margin-bottom: 0.75rem;
-  color: white;
   font-weight: 600;
   font-style: normal;
   font-size: 1.375rem;
@@ -236,7 +256,6 @@ a:visited {
 }
 
 .card__autor a {
-  color: white;
   margin-left: 0.3125rem;
 }
 
